@@ -1,0 +1,80 @@
+<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+            $("body").css("display", "none");
+            $("body").fadeIn(2000);
+    });
+</script>
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Khoa's Online Resume", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+        	  
+          
+                    <li id="fat-menu" class="dropdown">
+              <a href="/projects" class="dropdown-toggle" data-toggle="dropdown">
+              	Projects
+              	<b class="caret"></b>
+              </a>
+              	              <ul class="dropdown-menu">
+                <li><%= link_to "C++", '#' %></li>
+                                  
+             
+                 
+                <li>  <%= link_to "Clipping", '/clipping' %></li>
+                  
+                   <!-- <li>    <%= link_to "Graphics2", '#' %>  </li> -->
+              
+            <li class="divider">
+                <li><%= link_to "Java", '#' %></li>
+                
+                      </li>
+                <li>
+                  <%= link_to "Fanorona", '/fanorona' %>
+                </li>
+                    <li class="divider"> </li>
+                <!-- <li> <%= link_to "Ruby on Rails", '/create' %></li>
+                
+ 					<%= link_to "Rails 1", '#' %> -->
+              </ul>
+              	<li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              	About Khoa
+              	<b class="caret"></b> </a>
+              	<ul class="dropdown-menu">
+          <li><%= link_to "About Khoa", '/about' %></li>
+          <li><%= link_to "Contact Info", '/contact' %></li>
+          <li><%= link_to "Qualifications", '/qualifications' %></li>
+          
+           </ul>
+          <% if signed_in? %>
+             
+           <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Logged in as <%=   current_user.name %> <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li> <%= link_to "Send Message", '/create' %></li>
+                
+                  <li> <%= link_to "View Messages", '/index' %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                </li>
+                
+              </ul>
+            </li>
+          <% else %>
+          <li><%= link_to "Send Message", signin_path %></li>
+            <li><%= link_to "Sign in", signin_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

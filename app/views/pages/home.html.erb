@@ -1,0 +1,28 @@
+<div class="center hero-unit">
+  <h1>Welcome to Khoa's Resume</h1>
+
+  <h2>
+    by Khoa using Rails 3.2 using SQL3 hosted by Amazon
+    
+  </h2>
+
+ <% if signed_in? %>
+  <%= link_to "Khoa's Project! ", '/main_pro', class: "btn btn-large btn-primary" %>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  
+ <%= link_to "Send a Message To Khoa! ", '/create', class: "btn btn-large btn-primary" %>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+   
+   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ <%= link_to "All Messages!", '/index', class: "btn btn-large btn-primary" %>
+ 
+ 
+ <% else %>
+   <%= link_to "Khoa's Projects  ", '#', class: "btn btn-large btn-primary" %>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <%= link_to "Sign up now! ", signup_path, class: "btn btn-large btn-primary" %>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <%= link_to "Login!", '/signin', class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>
+ 
