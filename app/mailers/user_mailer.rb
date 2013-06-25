@@ -20,9 +20,5 @@ class UserMailer < ActionMailer::Base
    @user=user
     mail(:to => user.email, :subject => "Registered")
   end
-  def signup_confirmation(user)
-    @greeting = "Hi"
-    @user=user
-    mail to: user.email, subject: "Sign Up Confirmation"
-  end
+ 
 end
