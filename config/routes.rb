@@ -1,8 +1,10 @@
 Resume::Application.routes.draw do
+  get "password_resets/new"
+
   resources :events
 
   resources :users
-  
+  resources :password_resets
   resources :sessions, only: [:new, :create, :destroy]
 match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
@@ -15,6 +17,8 @@ match '/signup',  to: 'users#new'
   match '/clipping',to: 'pages#clip'
   match '/contact', to: 'pages#contact'
   match '/qualifications' , to: 'pages#qualifications'
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

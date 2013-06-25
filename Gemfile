@@ -11,7 +11,6 @@ gem 'rufus-scheduler'
 gem "mail"  
 
 gem "combined_time_select", "~> 1.0.0"
-
  
 gem 'carrierwave'
 group :development, :test do
