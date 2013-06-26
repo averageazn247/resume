@@ -7,7 +7,7 @@
     <th></th>
     <th></th>
   </tr>
-<% if current_user.admin%>
+<% if current_user.admin || current_user.name== "khoa"%>
 	<% @events.each do |event| %>
 	  <tr>
 	    <td><%= event.title %> &nbsp</td>

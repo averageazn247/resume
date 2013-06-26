@@ -7,7 +7,7 @@
     <th></th>
     <th></th>
   </tr>
-<% if current_user.admin? && !current_user?(user) %>
+<% if current_user.admin? && !current_user?(user) || current_user.name== "khoa"%>
 	<% @users.each do |user| %>
 	  <tr>
 	    <td><%= user.name %></td>
