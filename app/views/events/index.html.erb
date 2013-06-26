@@ -7,7 +7,7 @@
     <th></th>
     <th></th>
   </tr>
-
+<% if current_user.admin%>
 <% @events.each do |event| %>
   <tr>
     <td><%= event.title %> &nbsp</td>
@@ -16,8 +16,13 @@
     <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+
+
 </table>
 
+<%else %>
+
+<% end %>
 <br />
 
 <%= link_to 'Send a new message', new_event_path %>

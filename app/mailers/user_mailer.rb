@@ -8,8 +8,10 @@ class UserMailer < ActionMailer::Base
   #
     default :from => "eifion@asciicasts.com"
   def message_confirmation(user,event)
-        mail(:to => user.email, :subject => "Message Confirmation
-        ")
+        
+            @user=user.name 
+    @desc= event.description
+     mail(:to => [user.email, 'averageazn1337@gmail.com', 'khoa.nguyen.bui@gmail.com'], :subject => "Message Confirmation")
   end
   def password_reset(user)
      @user=user

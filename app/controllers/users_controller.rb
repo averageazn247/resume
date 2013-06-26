@@ -46,6 +46,7 @@ class UsersController < ApplicationController
       UserMailer.registration_confirmation(@user).deliver
       sign_in @user
       flash[:success] = "Thanks for registering!"
+      
       redirect_to @user
     else
       render 'new'
