@@ -45,6 +45,8 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.registration_confirmation(@user).deliver
       sign_in @user
+      cookies.permanent[:auth_token] = @user.auth_token
+      session[:user_id] = @user.id
       flash[:success] = "Thanks for registering!"
       
       redirect_to @user
