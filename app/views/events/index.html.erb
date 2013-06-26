@@ -8,21 +8,30 @@
     <th></th>
   </tr>
 <% if current_user.admin%>
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.title %> &nbsp</td>
-    <td><%= link_to '   Show | ', event %></td>  
-    <td><%= link_to 'Edit | ', edit_event_path(event) %></td>  
-    <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+	<% @events.each do |event| %>
+	  <tr>
+	    <td><%= event.title %> &nbsp</td>
+	    <td><%= link_to '   Show | ', event %></td>  
+	    <td><%= link_to 'Edit | ', edit_event_path(event) %></td>  
+	    <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr></table>
+	<% end %>
 
 
-</table>
+
 
 <%else %>
-
+	<% @events.each do |event| %>
+	  <tr>
+	  	<% if current_user.name == event.creator %>
+	    <td><%= event.title %> &nbsp</td>
+	    <td><%= link_to '   Show | ', event %></td>  
+	    <td><%= link_to 'Edit | ', edit_event_path(event) %></td>  
+	    <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr></table>
+	  <% end %>
 <% end %>
 <br />
 
 <%= link_to 'Send a new message', new_event_path %>
+<% end %>

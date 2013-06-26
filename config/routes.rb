@@ -17,6 +17,7 @@ match '/signup',  to: 'users#new'
   match '/clipping',to: 'pages#clip'
   match '/contact', to: 'pages#contact'
   match '/qualifications' , to: 'pages#qualifications'
+  match '/rails' , to: 'pages#rails'
   
   
   # The priority is based upon order of creation:
