@@ -8,7 +8,7 @@ Resume::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
+   
   match '/create', to: 'events#new'
   match '/about', to: 'pages#about'
   match '/index' , to: 'events#index'
@@ -19,7 +19,9 @@ match '/signup',  to: 'users#new'
   match '/qualifications' , to: 'pages#qualifications'
   match '/rails' , to: 'pages#rails'
   
-  
+  match 'auth/:provider/callback', to: 'sessions#create'
+match 'auth/failure', to: redirect('/')
+match 'signout', to: 'sessions#destroy', as: 'signout'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -72,6 +72,7 @@ $(document).ready(function() {
           <% else %>
           <li><%= link_to "Send Message", signin_path %></li>
             <li><%= link_to "Sign in", signin_path %></li>
+             <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
           <% end %>
         </ul>
       </nav>
