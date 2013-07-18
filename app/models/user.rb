@@ -15,14 +15,18 @@ has_many :authorizations
                     # uniqueness: { case_sensitive: false }
   
  
-before_create { generate_token(:auth_token) }
+before_create { generate_token(:auth_token) } 
 
 def add_provider(auth_hash)
   # Check if the provider already exists, so we don't add it twice
   unless authorizations.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
     Authorization.create :user => self, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
   end
-end
+end 
+ def send_email_confirm(user)
+   UserMailer.registration_confirmation(user)
+   
+ end 
 def send_password_reset
   generate_token(:password_reset_token)
   self.password_reset_sent_at = Time.zone.now
