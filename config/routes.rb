@@ -1,4 +1,10 @@
 Resume::Application.routes.draw do
+  get "sessions/new"
+
+  get "sessions/create"
+
+get   '/login', :to => 'sessions#new', :as => :login
+
   get "password_resets/new"
 
   resources :events
@@ -20,7 +26,7 @@ match '/signup',  to: 'users#new'
   match '/rails' , to: 'pages#rails'
   
   match 'auth/:provider/callback', to: 'sessions#create'
-match 'auth/failure', to: redirect('/')
+match 'auth/failure', to: redirect('sessions#failure')
 match 'signout', to: 'sessions#destroy', as: 'signout'
   # The priority is based upon order of creation:
   # first created -> highest priority.
