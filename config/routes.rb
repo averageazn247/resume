@@ -28,6 +28,7 @@ match '/signup',  to: 'users#new'
   match 'auth/:provider/callback', to: 'sessions#create'
 match 'auth/failure', to: redirect('sessions#failure')
 match 'signout', to: 'sessions#destroy', as: 'signout'
+match '/tamulol' , to: 'pages#tamulol'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
