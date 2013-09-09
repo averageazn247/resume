@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'bootstrap-sass' 
 gem 'bcrypt-ruby', '3.0.1'  
- 
+ gem 'devise'
+ gem 'omniauth'
+ gem 'oauth2'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'simple_form' 
@@ -11,7 +13,8 @@ gem 'rufus-scheduler'
 gem "mail"  
 gem 'omniauth-facebook', '1.4'
 gem "combined_time_select", "~> 1.0.0"
- 
+ gem 'paperclip'
+gem 'aws-sdk'
 gem 'carrierwave'
 group :development, :test do
   gem 'sqlite3', '1.3.5'

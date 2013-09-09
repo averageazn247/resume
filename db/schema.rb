@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730221730) do
+ActiveRecord::Schema.define(:version => 20130908043506) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -39,11 +39,15 @@ ActiveRecord::Schema.define(:version => 20130730221730) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.date     "dayof"
     t.text     "description"
     t.string   "creator"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "users", :force => true do |t|

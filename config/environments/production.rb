@@ -60,7 +60,14 @@ Resume::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => "khoastuff",
+    :access_key_id =>  "AKIAJCUK7Q6QB4GPYBRQ" ,
+    :secret_access_key =>"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"
+  }
+}
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5

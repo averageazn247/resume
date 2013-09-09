@@ -1,3 +1,4 @@
+<div class="hero-unit">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -8,7 +9,11 @@
   <b>Message:</b>
   <%= @event.description %>
 </p>
-
+<p>
+	File:
+	<%= @event.avatar.url%>
+</p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+</div>
